@@ -25,13 +25,14 @@ string(APPEND CMAKE_CXX_FLAGS " -Wno-unused-command-line-argument")
 string(APPEND CMAKE_CXX_FLAGS " -Wshadow -Wnon-virtual-dtor")
 
 hunter_add_package(GTest)
+hunter_add_package(nlohmann_json)
 find_package(GTest CONFIG REQUIRED)
-
+find_package(nlohmann_json 3.2.0 REQUIRED)
 # TODO: change template word to project name and delete this comment
 add_library(template STATIC
-  # enum your files and delete this comment
-  ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
-)
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/Student.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/sources/Table.cpp
+        )
 add_executable(tests
   # TODO: enum your files and delete this comment
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
@@ -45,6 +46,7 @@ target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 # TODO: change template word to project name and delete this comment
+target_link_libraries(template nlohmann_json::nlohmann_json)
 target_link_libraries(tests GTest::gtest_main template)
 
 enable_testing()
