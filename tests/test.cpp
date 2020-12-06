@@ -15,7 +15,6 @@ TEST(Example, EmptyTest) {
 }
 
 TEST(Table, FromJson){
-
   std::string test_json = \
 R"({
   "items": [
