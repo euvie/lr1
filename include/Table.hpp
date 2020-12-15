@@ -27,6 +27,5 @@ class Table {
   std::vector<size_t> m_w;
 
   friend std::ostream& operator << (std::ostream &out, Table& obj);
-
 };
 #endif  // INCLUDE_TABLE_HPP_
