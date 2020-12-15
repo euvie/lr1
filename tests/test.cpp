@@ -57,7 +57,7 @@ R"({
 
   std::stringstream str;
   table.print(str);
-  std::cout << str.str();
+  std::cout << table;
   std::string ref_string =\
 R"(| name          | group  | avg   | debt    |
 |---------------|--------|-------|---------|

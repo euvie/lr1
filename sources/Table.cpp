@@ -134,3 +134,9 @@ void Table::print(std::ostream& out) const
 
 Table::~Table(){
 }
+
+std::ostream& operator << (std::ostream &out, Table& obj)
+{
+  obj.print(out);
+  return out;
+}

@@ -11,7 +11,9 @@
 
 class Table {
  public:
-  explicit Table(const json& j);
+  explicit Table(const json& j); // explicit запрещает автоматическое
+  //создание конвертирующего конструктора, создаваемого автоматически при
+  //комниляции
 
   ~Table();
   static Table parseFile(const std::string& s);
@@ -23,5 +25,8 @@ class Table {
 
   std::vector<Student> m_students;
   std::vector<size_t> m_w;
+
+  friend std::ostream& operator << (std::ostream &out, Table& obj);
+
 };
 #endif  // INCLUDE_TABLE_HPP_
