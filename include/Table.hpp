@@ -20,9 +20,6 @@ class Table {
   //вызов метода без  создания экземпляра класса
 
   size_t w_name, w_group, w_avg, w_debt, w_space;
-
-  void print(std::ostream& out) const;
-
   std::vector<Student> m_students;
   std::vector<size_t> m_w;
 

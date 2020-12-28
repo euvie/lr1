@@ -54,10 +54,8 @@ R"({
   file_json.close();
   Table table = Table::parseFile("file_json1.json");
 
-
   std::stringstream str;
-  table.print(str);
-  std::cout << table;
+  str << table;
   std::string ref_string =\
 R"(| name          | group  | avg   | debt    |
 |---------------|--------|-------|---------|
@@ -68,7 +66,7 @@ R"(| name          | group  | avg   | debt    |
 | Petrov Nikita | IU8-31 | 33.03 | 4 items |
 |---------------|--------|-------|---------|
 )";
-
+  std::cout << table;
   EXPECT_EQ(str.str(), ref_string);
 }
 
